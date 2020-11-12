@@ -1,0 +1,58 @@
+
+
+#section-newsletter {
+    margin-top: 29px;
+}
+
+.form-section-title {
+    font: normal normal normal 20px/24px 'Open Sans', sans-serif;
+    color: #888888;
+    letter-spacing: 0px;
+    margin: 0 0 30px 0;
+}
+
+.message {
+    font: normal normal normal 12px/18px 'Open Sans', sans-serif;
+    color: #888888;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.input-group-newsletter {
+    margin-bottom: 20px;
+}
+
+.input-group-newsletter-radio {
+    margin-bottom: 23px;
+}
+
+.input-group-newsletter label {
+    display: block;
+    margin-bottom: 7px;
+    color: #888888;
+    font-size: 12px;
+}
+
+.input-group-newsletter-radio label{
+    color: #707070;
+    margin-right: 40px;
+}
+
+.input-group-newsletter input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+}
+
+.form-button {
+    width: 100%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    font: normal normal normal 16px/16px 'Open Sans', sans-serif;
+    letter-spacing: 0px;
+    color: #888888;
+    height: 39px;
+}
