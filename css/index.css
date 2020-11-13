@@ -71,9 +71,9 @@ body {
     margin-top: 9px;
 }
 
-/* SECTION NEWSLETTER */
+/* SECTION REGISTER */
 
-#section-newsletter {
+#section-register {
     margin: 29px 18px 0px 17px;
 }
 
@@ -87,7 +87,7 @@ body {
     height: 23px;
 }
 
-.newsletter-text {
+.register-text {
     font-size: 12px;
     line-height: 18px;
     color: #888888;
@@ -95,27 +95,27 @@ body {
     margin-bottom: 30px;
 }
 
-.input-group-newsletter {
+.input-group-register {
     margin-bottom: 20px;
 }
 
-.input-group-newsletter-radio {
+.input-group-register-radio {
     margin-bottom: 23px;
 }
 
-.input-group-newsletter label {
+.input-group-register label {
     display: block;
     margin-bottom: 7px;
     color: #888888;
     font-size: 12px;
 }
 
-.input-group-newsletter-radio label{
+.input-group-register-radio label{
     color: #707070;
     margin-right: 40px;
 }
 
-.input-group-newsletter input {
+.input-group-register input {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
     box-sizing: border-box;
@@ -234,20 +234,20 @@ body {
     margin: 0 auto;
 }
 
-/* SECTION SHARE */
+/* SECTION NEWSLETTER */
 
-#section-share {
+#section-newsletter {
     margin: 0px 20px 85px 9px;
 }
 
-.section-share-title {
+.section-newsletter-title {
     color: #888888;
     font-size: 18px;
     margin-bottom: 0px 0px 44px 0px;
     text-align: center;
 }
 
-#section-share span {
+#section-newsletter span {
     display: block;
     font-size: 14px;
     text-align: center;
@@ -255,31 +255,31 @@ body {
     color: #888888;
 }
 
-.form-share {
+.form-newsletter {
     color: #888888;
     width: 100%;
 }
 
-.form-share label {
+.form-newsletter label {
     display: block;
     font-size: 12px;
 }
 
-.form-share .input-group:first-child {
+.form-newsletter .input-group:first-child {
     margin-bottom: 20px;
 }
 
-.form-share .input-group:last-child {
+.form-newsletter .input-group:last-child {
     margin-bottom: 42px;
 }
 
-.form-share input {
+.form-newsletter input {
     box-sizing: border-box;
     width: 100%;
     height: 30px;
 }
 
-.share-button {
+.newsletter-button {
     width: 260px;
     height: 39px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -306,6 +306,19 @@ footer {
 .footer-info p{
     margin: 0px;
 }
+
+@media (max-width: 419px) {
+
+    .navbar-item {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .header-background {
+        height: 100%;
+    }
+}
+
 @media (max-width: 839px) {
     .grid-products {
         box-sizing: border-box;
@@ -316,35 +329,58 @@ footer {
 }
 
 @media (min-width: 840px) {
+    .banner-title span {
+        text-align: center;
+    }
 
     .grid-products {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 41px;
     }
+
+    .form-newsletter {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-newsletter .input-group:first-child {
+        margin-right: 40px;
+    }
+
+    .form-newsletter input {
+        width: 340px;
+        height: 30px;
+    }
 }
 
-@media (min-width: 1260px){
+@media (min-width: 960px) {
     main {
         width: 930px;
         margin: 0 auto;
     }
 
-    #section-newsletter, #section-products, #section-share {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
-    #section-newsletter {
+    #section-register {
         margin: 21px 0 79px 0;
         display: grid;
         grid-template-columns: 520px 340px;
         gap: 60px;
     }
 
-    .newsletter-text {
+    .register-text {
         margin-bottom: 30px;
     }
+    
+}
+
+@media (min-width: 1260px){
+
+    #section-register, #section-products, #section-newsletter {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    
 
     .grid-products {
         display: block;
