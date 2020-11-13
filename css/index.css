@@ -226,3 +226,20 @@ body {
     margin: 52px auto 0 auto;
 }
 
+/* FOOTER */
+footer {
+    background: linear-gradient(-6deg, #707070 78%, #FFF 78.5%)
+}
+
+.footer-info{
+    text-align: center;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 71px 0 36px 0;
+    color: white;
+}
+
+.footer-info p{
+    margin: 0px;
+}
+
