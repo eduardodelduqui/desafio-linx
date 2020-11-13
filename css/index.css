@@ -80,7 +80,7 @@ body {
 .grid-products {
     display: grid;
     grid-template-rows: repeat(8, 1fr);
-    gap: 41px;
+    gap: 30px;
 }
     
 .product-item {
@@ -93,7 +93,7 @@ body {
 .product-img {
     position: relative;
     box-sizing: border-box;
-    height: 141px;
+    height: 129px;
     min-width: 169px;
     border: 1px solid #707070;
 }
@@ -105,7 +105,7 @@ body {
 
 .product-name {
     font-size: 14px;
-    margin: 0 0 10px 0px;
+    margin: 0 0 13px 0px;
     color: #888888
 }
 
