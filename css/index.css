@@ -1,9 +1,81 @@
+html, body {
+    margin: 0px;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.header-background {
+    height: 399px;
+    width: 100%;
+    background: linear-gradient(4deg, #FFF 25%, #707070 25.4%)
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar-item {
+    display: block;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 6px #00000029;
+    width: 160px;
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #888888;
+    letter-spacing: 0px;
+    font-size: 14px;
+    line-height: 16px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 6px #00000029;
+    border-radius: 4px;
+    border: 1px solid #707070;
+    margin-bottom: 20px;
+}
+
+.navbar-item {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.banner-title {
+    padding-top: 69px;
+    margin: 0 16px 56px 16px;   
+
+}
+
+.banner-title span {
+    display: block;
+    color: #FFFFFF;
+    letter-spacing: 0px;
+    text-align: left
+}
+
+.banner-title span:first-child{
+    font-size: 20px;
+    line-height:24px;
+}
+
+.banner-title span:nth-child(2) {
+    font-size: 40px;
+    line-height:49px;
+    font-weight: bold;
+}
+
+.banner-title span:last-child {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 9px;
+}
+
+/* SECTION NEWSLETTER */
+
 #section-newsletter {
-    margin-top: 29px;
+    margin: 29px 18px 0px 17px;
 }
 
 .form-section-title {
@@ -65,8 +137,7 @@ body {
 /* SECTION PRODUCTS */
 
 #section-products {
-    margin-top: 91px;
-    margin-bottom: 128px;
+    margin: 91px 18px 128px 10px;
 }
 
 .section-products-title {
