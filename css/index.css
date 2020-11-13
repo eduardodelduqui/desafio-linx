@@ -84,11 +84,12 @@ body {
     color: #888888;
     letter-spacing: 0px;
     margin: 0 0 30px 0;
+    height: 23px;
 }
 
 .newsletter-text {
     font-size: 12px;
-    font-weight: 18px;
+    line-height: 18px;
     color: #888888;
     text-align: left;
     margin-bottom: 30px;
@@ -173,8 +174,10 @@ body {
 
 .product-name {
     font-size: 14px;
+    line-height: 16px;
     margin: 0 0 13px 0px;
-    color: #888888
+    color: #888888;
+    height: 16px;
 }
 
 .product-description, .old-price, .price-details {
@@ -190,17 +193,25 @@ body {
 
 .old-price {
     margin: 0 0 6px 0;
+    font-size: 12px;
+    line-height: 16px;;
+    height: 14px;
 }
 
 .price {
     font-size: 16px;
+    line-height: 16px;
     font-weight: bold;
     color: #888888;
     margin: 0 0 7px 0;
+    height: 19px;
 }
 
 .price-details {
+    font-size: 12px;
+    line-height: 16px;
     margin: 0 0 10px 0;
+    height: 14px;
 }
 
 .buy-button {
@@ -311,10 +322,6 @@ footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 41px;
     }
-
-    .product-name {
-        margin: 14px 0 10px 0;
-    }
 }
 
 @media (min-width: 1260px){
@@ -328,12 +335,15 @@ footer {
         margin-right: 0px;
     }
 
-    #section-register {
+    #section-newsletter {
         margin: 21px 0 79px 0;
         display: grid;
         grid-template-columns: 520px 340px;
-        gap:  60px;
-        
+        gap: 60px;
+    }
+
+    .newsletter-text {
+        margin-bottom: 30px;
     }
 
     .grid-products {
@@ -341,6 +351,11 @@ footer {
         display: grid;
         grid-template-columns: repeat(4, 200px);
     }
+
+    .product-name {
+        margin: 14px 0 10px 0;
+    }
+
 
     .product-description {
         display: block;
