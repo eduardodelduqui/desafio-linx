@@ -95,10 +95,6 @@ body {
     margin-bottom: 30px;
 }
 
-.input-group-register {
-    margin-bottom: 20px;
-}
-
 .input-group-register-radio {
     margin-bottom: 23px;
 }
@@ -133,6 +129,22 @@ body {
     letter-spacing: 0px;
     color: #888888;
     height: 39px;
+}
+
+.invalid-name, .invalid-email, .invalid-cpf {
+    margin-bottom: 3px;
+    display: block;
+    font-size: 12px;
+    color: #E72323;
+}
+
+.invalid-input {
+    border: 1px solid #E72323 !important;
+}
+
+
+.invisible {
+    visibility: hidden;
 }
 
 /* SECTION PRODUCTS */
@@ -247,7 +259,7 @@ body {
     text-align: center;
 }
 
-#section-newsletter span {
+.section-newsletter-subtitle {
     display: block;
     font-size: 14px;
     text-align: center;
@@ -274,6 +286,7 @@ body {
 }
 
 .form-newsletter input {
+
     box-sizing: border-box;
     width: 100%;
     height: 30px;

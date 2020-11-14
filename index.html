@@ -38,18 +38,21 @@
                 </p>
             </div>
             <div>
-                <form class="form-register">
+                <form class="form-section-register">
                     <div class="input-group-register">
                         <label for="input-name" >Seu nome:</label>
                         <input type="text" id="input-name" name="name" required>
+                        <span class="invalid-name invisible">Por favor, insira apenas letras</span>
                     </div>
                     <div class="input-group-register">
                         <label for="input-email" >E-mail:</label>
                         <input type="text" id="input-email" name="email" required>
+                        <span class="invalid-email invisible">Por favor, insira um e-mail válido</span>
                     </div>
                     <div class="input-group-register">
                         <label for="input-cpf" >CPF:</label>
                         <input type="text" id="input-cpf" name="cpf" required>
+                        <span class="invalid-cpf invisible">Por favor, insira um cpf válido</span>
                     </div>
                     <div class="input-group-register-radio">
                         <input type="radio" id="input-male" name="gender" value="Masculino" required>
@@ -167,16 +170,18 @@
             <h3 class="section-newsletter-title">
                 Compartilhe a novidade
             </h3>
-            <span>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</span>
-            <form action="">
+            <span class="section-newsletter-subtitle">Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</span>
+            <form class="form-section-newsletter">
                 <div class="form-newsletter">
                     <div class="input-group">
                         <label for="input-friend-name">Nome do seu amigo:</label>
-                        <input type="text" id="input-friend-name">
+                        <input type="text" id="input-friend-name" name="name" required>
+                        <span class="invalid-name invisible">Por favor, insira apenas letras</span>
                     </div>
                     <div class="input-group">
                         <label for="input-friend-email">E-mail:</label>
-                        <input type="text" id="input-friend-email" name="email">
+                        <input type="text" id="input-friend-email" name="email" required>
+                        <span class="invalid-email invisible">Por favor, insira um e-mail válido</span>
                     </div>
                 </div>
                 <button type="submit" class="newsletter-button">Enviar agora</button>
@@ -188,5 +193,6 @@
             <p>Testando suas habilidades em HTML, CSS e JS.<br>Linx Impulse<br>2019</p>
         </div>
     </footer>
+    <script type="text/javascript" src="/js/index.js"></script>
 </body>
 </html>
