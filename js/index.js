@@ -1,112 +1,68 @@
-const formNewsletter = document.querySelector('.form-section-newsletter');
-const formRegister = document.querySelector('.form-section-register');
+const gridProducts = document.querySelector('.grid-products');
 
-formNewsletter.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if(validateInputs(formNewsletter)){
-        formNewsletter.submit()
-    }
+$(document).ready(() => {
+    getProducts();
 });
 
-formRegister.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if(validateInputs(formRegister)){
-        formRegister.submit()
-    }
-});
-
-function validateInputs(form) {
-    const formValue = getForm(form);
-    let valores = []
-    
-    if(!validName(formValue.name)){
-        form.elements.namedItem('name').classList.add('invalid-input');
-        form.querySelector('.invalid-name').classList.remove('invisible');
-        valores.push(false)
-    }else{
-        form.elements.namedItem('name').classList.remove('invalid-input');
-        form.querySelector('.invalid-name').classList.add('invisible');
-        valores.push(true)
-    }
-
-    if(!validEmail(formValue.email)){
-        form.elements.namedItem('email').classList.add('invalid-input');
-        form.querySelector('.invalid-email').classList.remove('invisible');
-        valores.push(false)
-    }else {
-        form.elements.namedItem('email').classList.remove('invalid-input');
-        form.querySelector('.invalid-email').classList.add('invisible');
-        valores.push(true)
-    }
-
-    if(formValue.cpf){
-        if(!testCPF(formValue.cpf)){
-            form.elements.namedItem('cpf').classList.add('invalid-input');
-            form.querySelector('.invalid-cpf').classList.remove('invisible');
-            valores.push(false)
-        }else {
-            form.elements.namedItem('cpf').classList.remove('invalid-input');
-            form.querySelector('.invalid-cpf').classList.add('invisible');
-            valores.push(true)
+var pageCount = 1;
+function getProducts() {
+    $.ajax({
+        url: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page='+pageCount,
+        type: 'GET',
+        dataType: 'JSON',
+        success: (res) => {
+            let lista = res.products;
+            for (item of lista) {
+                newItem = createNewItem(item);
+                gridProducts.appendChild(newItem);
+            }
         }
-    }
-    if(!valores.includes(false)){
-        return true
-    }
+    });
 }
 
-function getForm(form) {
-    const nameValue = form.elements.namedItem('name').value.trim();
-    const emailValue = form.elements.namedItem('email').value.trim();
-    const cpfInput = form.elements.namedItem('cpf');
-    if(cpfInput) {
-        const cpfValue = cpfInput.value.trim();
-        return {
-            name: nameValue,
-            email: emailValue,
-            cpf: cpfValue
-        }
-    }
-    return {
-        name: nameValue,
-        email: emailValue,
-    }
-}
+function createNewItem(item) { 
+    // CREATE ELEMENTS
+    productItem = document.createElement('div');
+    productImg = document.createElement('div');
+    img = document.createElement('img');
+    productDetails = document.createElement('div');
+    productName = document.createElement('p');
+    productDescription = document.createElement('p');
+    priceFrom = document.createElement('p');
+    priceTo = document.createElement('p');
+    priceDetails = document.createElement('p');
+    buyButton = document.createElement('button');
 
-function validEmail(email) {
-    const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return reg.test(email);
-}
+    // ADD VALUE TO ELEMENT
+    img.src = item.image;
+    productName.innerHTML = item.name;
+    productDescription.innerHTML = item.description;
+    priceFrom.innerHTML = item.oldPrice;
+    priceTo.innerHTML = item.price;
+    priceDetails.innerHTML = `ou ${item.installments.count}x de ${item.installments.value}`;
+    buyButton.innerHTML = 'Comprar';
 
-function validName(name) {
-    const reg = /^[A-Za-z]+$/
-    return reg.test(name);
-}
+    // ADD CLASSES
+    productItem.classList.add('product-item');
+    productImg.classList.add('product-img');
+    productDetails.classList.add('product-details');
+    productName.classList.add('product-name');
+    productDescription.classList.add('product-description');
+    priceFrom.classList.add('old-price')
+    priceTo.classList.add('price');
+    priceDetails.classList.add('price-details');
+    buyButton.classList.add('buy-button');
 
-function validCPF(cpf) {
-    if(cpf == 5) {
-        return true;
-    }
-}
+    //APPEND
+    productImg.appendChild(img);
+    productDetails.appendChild(productName);
+    productDetails.appendChild(productDescription);
+    productDetails.appendChild(priceFrom);
+    productDetails.appendChild(priceTo);
+    productDetails.appendChild(priceDetails);
+    productDetails.appendChild(buyButton);
+    productItem.appendChild(productImg);
+    productItem.appendChild(productDetails);
 
-function testCPF(strCPF) {
-    var sum;
-    var rest;
-    sum = 0;
-    strCPF = strCPF.replace(/\./g,'').replace('-','');
-  if (strCPF == "00000000000") return false;
-
-  for (i=1; i<=9; i++) sum = sum + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-  rest = (sum * 10) % 11;
-
-    if ((rest == 10) || (rest == 11))  rest = 0;
-    if (rest != parseInt(strCPF.substring(9, 10)) ) return false;
-
-  sum = 0;
-    for (i = 1; i <= 10; i++) sum = sum + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-    rest = (Soma * 10) % 11;
-
-    if ((rest == 10) || (rest == 11))  rest = 0;
-    if (rest != parseInt(strCPF.substring(10, 11) ) ) return false;
-    return true;
+    return productItem
 }
