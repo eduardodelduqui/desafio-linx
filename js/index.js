@@ -4,6 +4,10 @@ $(document).ready(() => {
     getProducts();
 });
 
+$(".see-more-button").click(() => {
+    getProducts();
+});
+
 var pageCount = 1;
 function getProducts() {
     $.ajax({
@@ -18,6 +22,7 @@ function getProducts() {
             }
         }
     });
+    pageCount++
 }
 
 function createNewItem(item) { 
@@ -37,9 +42,9 @@ function createNewItem(item) {
     img.src = item.image;
     productName.innerHTML = item.name;
     productDescription.innerHTML = item.description;
-    priceFrom.innerHTML = item.oldPrice;
-    priceTo.innerHTML = item.price;
-    priceDetails.innerHTML = `ou ${item.installments.count}x de ${item.installments.value}`;
+    priceFrom.innerHTML = formattedPrice(item.oldPrice);
+    priceTo.innerHTML = formattedPrice(item.price);
+    priceDetails.innerHTML = `ou ${item.installments.count}x de ${formattedPrice(item.installments.value)}`;
     buyButton.innerHTML = 'Comprar';
 
     // ADD CLASSES
@@ -65,4 +70,8 @@ function createNewItem(item) {
     productItem.appendChild(productDetails);
 
     return productItem
+}
+
+function formattedPrice(price) {
+    return price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 }
