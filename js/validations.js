@@ -15,8 +15,15 @@ formRegister.addEventListener('submit', (e) => {
     }
 });
 
+
+
+/**
+ * Returns a Boolean value that indicates whether inputs are valid
+ * @param {Object} required form - A DOM Object form
+ * @returns {boolean]} 
+ */
 function validateInputs(form) {
-    const formValue = getForm(form);
+    const formValue = getValues(form);
     let validValues = []
     
     if(!validName(formValue.name)){
@@ -40,7 +47,7 @@ function validateInputs(form) {
     }
 
     if(formValue.cpf){
-        if(!testCPF(formValue.cpf)){
+        if(!validCPF(formValue.cpf)){
             form.elements.namedItem('cpf').classList.add('invalid-input');
             form.querySelector('.invalid-cpf').classList.remove('invisible');
             validValues.push(false)
@@ -55,7 +62,12 @@ function validateInputs(form) {
     }
 }
 
-function getForm(form) {
+
+/**
+ * Returns values from a DOM Object form
+ * @param {DOM Object} form 
+ */
+function getValues(form) {
     const nameValue = form.elements.namedItem('name').value.trim();
     const emailValue = form.elements.namedItem('email').value.trim();
     const cpfInput = form.elements.namedItem('cpf');
@@ -73,23 +85,32 @@ function getForm(form) {
     }
 }
 
+/**
+ * Returns a Boolean value that indicates whether an e-mail is valid
+ * @param {any} required email
+ * @returns {boolean]} 
+ */
 function validEmail(email) {
     const reg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return reg.test(email);
 }
 
+/**
+ * Returns a Boolean value that indicates whether a name is valid
+ * @param {any} required name
+ * @returns {boolean]} 
+ */
 function validName(name) {
     const reg = /^[A-Za-z]+$/
     return reg.test(name);
 }
 
-function validCPF(cpf) {
-    if(cpf == 5) {
-        return true;
-    }
-}
-
-function testCPF(strCPF) {
+/**
+ * Returns a Boolean value that indicates whether a CPF is valid
+ * @param {Object} required strCPF
+ * @returns {boolean]} 
+ */
+function validCPF(strCPF) {
     var sum;
     var rest;
     sum = 0;

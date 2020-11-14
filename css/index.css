@@ -169,6 +169,25 @@ input:focus {
     margin: 0px 0px 23px 0px;
 }
 
+ .title-style {margin-top:50px;
+    display:flex;
+}
+
+.title-style:before {
+    margin: auto 1em auto 0;
+}
+
+.title-style:after {
+    margin: auto 0 auto 1em;
+}
+
+.title-style:before, .title-style:after {
+    color:white;
+    content:'';
+    flex:1;
+    border-bottom: groove 2px;
+}
+
 .grid-products {
     box-sizing: border-box;
     margin-bottom: 52px;

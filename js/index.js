@@ -1,30 +1,38 @@
-const gridProducts = document.querySelector('.grid-products');
+var page = 'frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1'
+var apiIsReady = true;
 
 $(document).ready(() => {
     getProducts();
 });
 
 $(".see-more-button").click(() => {
-    getProducts();
+    if(apiIsReady) getProducts();
 });
 
-var pageCount = 1;
 function getProducts() {
+    const gridProducts = document.querySelector('.grid-products');
     $.ajax({
-        url: 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page='+pageCount,
+        url: 'https://'+page,
         type: 'GET',
         dataType: 'JSON',
+        beforeSend: () =>{ apiIsReady = false; },
         success: (res) => {
             let lista = res.products;
+            page = res.nextPage
             for (item of lista) {
                 newItem = createNewItem(item);
                 gridProducts.appendChild(newItem);
             }
-        }
+        },
+        complete: () => { apiIsReady = true; } 
     });
-    pageCount++
 }
 
+/**
+ * returns a DOM Object
+ * @param {Object} required item
+ * @returns {boolean]} 
+ */
 function createNewItem(item) { 
     // CREATE ELEMENTS
     productItem = document.createElement('div');
@@ -72,6 +80,11 @@ function createNewItem(item) {
     return productItem
 }
 
+/**
+ * Returns a BRL currency String
+ * @param {Number} price 
+ * @returns {String}
+ */
 function formattedPrice(price) {
     return price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
 }
