@@ -101,7 +101,7 @@ function validEmail(email) {
  * @returns {boolean]} 
  */
 function validName(name) {
-    const reg = /^[A-Za-z]+$/
+    const reg = /^[A-Za-z ]+$/
     return reg.test(name);
 }
 
