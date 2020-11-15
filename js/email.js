@@ -1,5 +1,10 @@
 const emailProductList = document.querySelector('.email-product-list');
 $(document).ready(() => {
+    createEmailProductList();
+})
+
+
+function createEmailProductList() {
     promise  = getProducts();
     promise.then((res) => {
         products = res.products
@@ -8,4 +13,4 @@ $(document).ready(() => {
             emailProductList.appendChild(newItem)
         }
     })
-})
+}

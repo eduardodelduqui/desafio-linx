@@ -1,16 +1,14 @@
 const gridProducts = document.querySelector('.grid-products');
 $(document).ready(() => {
-    promise  = getProducts();
-    promise.then((res) => {
-        products = res.products
-        for(product of products) {
-            newItem = createNewItem(product);
-            gridProducts.appendChild(newItem)
-        }
-    })
+    createProductList();
 });
 
 $(".see-more-button").click(() => {
+    createProductList();
+});
+
+
+function createProductList() {
     promise  = getProducts();
     promise.then((res) => {
         products = res.products
@@ -19,4 +17,7 @@ $(".see-more-button").click(() => {
             gridProducts.appendChild(newItem)
         }
     })
-});
+}
+
+
+
