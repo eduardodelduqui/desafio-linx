@@ -15,8 +15,6 @@ formRegister.addEventListener('submit', (e) => {
     }
 });
 
-
-
 /**
  * Returns a Boolean value that indicates whether inputs are valid
  * @param {Object} required form - A DOM Object form
@@ -61,7 +59,6 @@ function validateInputs(form) {
         return true
     }
 }
-
 
 /**
  * Returns values from a DOM Object form

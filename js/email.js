@@ -3,7 +3,9 @@ $(document).ready(() => {
     createEmailProductList();
 })
 
-
+/**
+ *  Creates and appends a new product list
+ */
 function createEmailProductList() {
     promise  = getProducts();
     promise.then((res) => {

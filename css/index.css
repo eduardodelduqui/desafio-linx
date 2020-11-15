@@ -1,16 +1,22 @@
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     margin: 0px;
 }
 
-body {
+* {
     font-family: 'Open Sans', sans-serif;
 }
 
 .header-background {
+    position: relative;
     height: 399px;
     width: 100%;
-    background: linear-gradient(4deg, #FFF 25%, #707070 25.4%)
+    background: linear-gradient(4deg, #FFF 20%, #707070 21%)
 }
+
 
 .navbar {
     display: flex;
@@ -147,6 +153,10 @@ button:focus {
     outline: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 input:focus {
     outline: none;
 }
@@ -218,6 +228,7 @@ input:focus {
     min-width: 169px;
     border: 1px solid #707070;
     overflow: hidden;
+    padding: 0px;
 }
 
 .product-img img{
@@ -353,23 +364,28 @@ input:focus {
 footer {
     position: relative;
     height: 157px;
-    background: linear-gradient(-6deg, #707070 78%, #FFF 78.5%)
+    background-color: #777777;
 }
 
 .footer-info{
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
     font-size: 12px;
     line-height: 18px;
     color: white;
     height: 50px;
     width: 260px;
     text-align: center;
-    margin: 0px;
-    bottom: 36px;
-
+    margin: 0 auto;
+    padding-top: 71px;
 }
+
+.angled-footer-background {
+    position: absolute;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to bottom right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 51%);
+}
+
 
 
 @media (max-width: 419px) {
@@ -382,12 +398,6 @@ footer {
     .header-background {
         height: 100%;
     }
-}
-
-@media (min-width: 460px) {
-
-
-
 }
 
 @media (max-width: 839px) {
@@ -444,7 +454,25 @@ footer {
     
 }
 
+@media (max-width: 1260px) {
+    .angled-footer-background {
+        height: 50px;
+    }
+
+    .header-background {
+        background: linear-gradient(4deg, #FFF 20%, #707070 20.4%)
+    }
+}
+
 @media (min-width: 1260px){
+
+    .angled-header-background {
+        height: 140px;
+        width: 100%;
+        bottom: 0px;
+        position: absolute;
+        background: linear-gradient(to top right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 50.4%);
+    }
 
     #section-register, #section-products, #section-newsletter {
         margin-left: 0px;
@@ -482,24 +510,9 @@ footer {
     }
 
     .footer-info {
-        bottom: 86px;
+        padding-top: 157.24px;
     }
 }
-
-@media (min-width: 1500px){
-    
-    .header-background {
-        background: linear-gradient(5deg, #FFF 26%, #707070 26.4%);
-    }
-
-    footer {
-        position: relative;
-        height: 157px;
-        background: linear-gradient(-6deg, #707070 78%, #FFF 78.5%)
-    }
-}
-    
-
 
 @keyframes fadeIn {
     0% {
