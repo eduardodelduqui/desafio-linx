@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    min-width: 290px;
 }
 
 html, body {
@@ -224,7 +225,7 @@ input:focus {
 .product-img {
     position: relative;
     box-sizing: border-box;
-    height: 129px;
+    min-height: 129px;
     min-width: 169px;
     border: 1px solid #707070;
     overflow: hidden;
@@ -247,7 +248,7 @@ input:focus {
     line-height: 16px;
     margin: 0 0 13px 0;
     color: #888888;
-    height: 16px;
+    min-height: 16px;
 }
 
 .product-description, .old-price, .price-details {
@@ -386,7 +387,15 @@ footer {
     background: linear-gradient(to bottom right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 51%);
 }
 
+@media (max-width: 340px) {
+    .product-img {
+        min-width: 130px;
+    }
 
+    .product-item {
+        grid-template-columns: 130px 1fr;
+    }
+}
 
 @media (max-width: 419px) {
 
