@@ -26,6 +26,8 @@ Foram realizados todos os processos solicitados:
 
 <h3>Algumas considerações sobre a realização do desafio:</h3>
 
+- Foi escolhido o desenvolvimento Mobile First;
+
 - A fonte requisitada não está disponível de forma gratuita para o uso pessoal ou comercial, foi utilizado uma fonte semelhante. Dessa forma, algumas pequenas alterações tiveram que ser feitas para que o resultado final fosse o mais próximo possível ao proposto;
 
 - Não foi utilizado nenhum framework ao longo do desenvolvimento;
